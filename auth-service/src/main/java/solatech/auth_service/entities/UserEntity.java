@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long userId;
     private String username;
     private String password;
     private String email;
