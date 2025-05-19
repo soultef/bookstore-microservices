@@ -8,10 +8,10 @@ import solatech.auth_service.services.RegistrationService;
 
 @RestController
 @RequestMapping("/api/auth")
-public class RergistrationController {
+public class RegistrationController {
 
     private final RegistrationService registrationService;
-    public RergistrationController(RegistrationService registrationService) {
+    public RegistrationController(RegistrationService registrationService) {
         this.registrationService = registrationService;
     }
     @RequestMapping("/register")
