@@ -8,7 +8,6 @@ public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
-    private String username;
     private String password;
     private String email;
     private String userType;
