@@ -1,7 +1,9 @@
 package solatech.auth_service.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 
 
 @Entity
@@ -11,6 +13,7 @@ public class EmployeeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long employeeId;
+
     @NotBlank(message = "First name must not be blank")
     private String firstName;
 
@@ -18,6 +21,8 @@ public class EmployeeEntity {
     private String lastName;
 
     @NotBlank(message = "email must not be blank")
+    @Email(message = "Email must be valid.")
+    @Pattern(regexp = "^[A-Za-z0-9._%+-]+@solatech\\.com$", message = "Email must be a solatech.com address")
     private String email;
 
     @NotBlank(message = "Social security must not be blank")
