@@ -23,6 +23,7 @@ public class EmployeeEntity {
     @NotBlank(message = "email must not be blank")
     @Email(message = "Email must be valid.")
     @Pattern(regexp = "^[A-Za-z0-9._%+-]+@solatech\\.com$", message = "Email must be a solatech.com address")
+    @Column(unique = true)
     private String email;
 
     @NotBlank(message = "Social security must not be blank")
