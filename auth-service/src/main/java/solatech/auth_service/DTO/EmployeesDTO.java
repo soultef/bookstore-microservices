@@ -6,14 +6,14 @@ public class EmployeesDTO {
     private String email;
     private String message;
     private String status;
-    private boolean isRegistered = false;
-
-    public EmployeesDTO() {}
+    private boolean isRegistered;
 
     public EmployeesDTO(String fullName, String email, String message) {
         this.fullName = fullName;
         this.email = email;
         this.message = message;
+        this.status = "PENDING";
+        this.isRegistered = false;
     }
 
     public String getFullName() {
