@@ -2,6 +2,7 @@ package solatech.auth_service.entities;
 
 import jakarta.persistence.*;
 
+
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
@@ -11,7 +12,9 @@ public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
+
     @NotBlank(message = "Email address must not be blank")
+    @Column(unique = true, nullable = false)
     private String email;
 
     @NotBlank(message = "Password field must not empty or blank")
@@ -21,7 +24,8 @@ public class UserEntity {
     private String confirmPassword;
 
     @NotBlank
-    private String userType;
+    private final String userType = "CUSTOMER";
+
     @NotNull
     private Boolean AccountStatus;
 
@@ -53,9 +57,6 @@ public class UserEntity {
         return userType;
     }
 
-    public void setUserType(@NotBlank String userType) {
-        this.userType = userType;
-    }
 
     public @NotNull Boolean getAccountStatus() {
         return AccountStatus;
