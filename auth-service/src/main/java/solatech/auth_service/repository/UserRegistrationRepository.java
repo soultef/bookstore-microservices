@@ -1,4 +1,4 @@
 package solatech.auth_service.repository;
 
-public class UserRegistrationService {
+public class UserRegistrationRepository {
 }
