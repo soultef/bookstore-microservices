@@ -28,11 +28,11 @@ public class EmployeeEntity {
 
     @NotBlank(message = "Social security must not be blank")
     @Pattern(regexp = "^(?!000|666|9\\d{2})\\d{3}-(?!00)\\d{2}-(?!0000)\\d{4}$", message = "Invalid SSN format")
-    private String ssn;
-
+    @Column(unique = true)
     private String SSN;
 
     @NotBlank(message = "Employee role must be defined")
+    @Column(name = "roles")
     private String role;
 
     @NotBlank(message = "Employee department must be assigned")
