@@ -5,6 +5,8 @@ public class EmployeesDTO {
     private String fullName;
     private String email;
     private String message;
+    private String status;
+    private boolean isRegistered = false;
 
     public EmployeesDTO() {}
 
@@ -36,5 +38,21 @@ public class EmployeesDTO {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public boolean isRegistered() {
+        return isRegistered;
+    }
+
+    public void setRegistered(boolean registered) {
+        isRegistered = registered;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
