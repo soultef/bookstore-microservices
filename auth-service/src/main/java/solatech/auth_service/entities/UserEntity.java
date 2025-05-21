@@ -7,7 +7,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 @Entity
-@Table(name  = "users")
+@Table(name  = "customers")
 public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,6 +18,7 @@ public class UserEntity {
     private String email;
 
     @NotBlank(message = "Password field must not empty or blank")
+    @Column(name = "user_password", nullable = false, length = 255)
     private String password;
 
     @NotBlank(message = "Password field must not empty or blank")
